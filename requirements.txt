@@ -1,0 +1,2 @@
+snake-guice>=0.4
+python-daemon>=2.1
