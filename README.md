@@ -1,5 +1,5 @@
 # Amazon Discounts v1.0
-## Contributors: Khai Hua <kdhua@ucsc.edu>, Nick Leeds <nleeds@ucsc.edu>, Caleb Farrand <ctfarran>, Cristian Gonzales <xcristian.gonzales>, Christopher Evans <chjevans@ucsc.edu>
+## Contributors: Khai Hua <kdhua@ucsc.edu>, Nick Leeds <nleeds@ucsc.edu>, Caleb Farrand <ctfarran@ucsc.edu>, Cristian Gonzales <xcristian.gonzales@gmail.com>, Christopher Evans <chjevans@ucsc.edu>
 
 ## Purpose
 * Daemon that finds items discounted heavily (95-99% or user specified)
