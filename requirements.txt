@@ -1,2 +1,5 @@
 snake-guice>=0.4
 python-daemon>=2.1
+python-amazon-simple-product-api>=2.2
+scrapy>=1.4
+selenium>=3.6

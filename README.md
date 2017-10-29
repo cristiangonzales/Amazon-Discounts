@@ -13,6 +13,7 @@
 
 ## Prerequisites for application use
 * Have Docker installed and running on your machine
+* Have Google Chrome (web browser) installed
 
 ## Features
 * TBD
