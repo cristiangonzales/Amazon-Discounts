@@ -1,0 +1,11 @@
+Tabs are 4 spaces
+Method names are separated by underscores ie camel_scraper
+Variables are separated by capitals ie camelScraper
+Try to prevent any one method from taking up an entire screenlength
+There should be a comment on top of file explaining gist of what is in file and there should be a comment for each global variable if any about what it is for.
+No single letter variable names unless it is an index
+Do not terminate a line with semicolons.
+80 character ruler.
+If you find a bug or something unimplemented, at a #TODO to it.
+
+
