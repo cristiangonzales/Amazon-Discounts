@@ -1,2 +1,2 @@
 Here's an example of how to find items through the API. The program currently 
-finds chairs and returns a signed url.  
+finds chairs and returns a signed url that contains an xml file. 
