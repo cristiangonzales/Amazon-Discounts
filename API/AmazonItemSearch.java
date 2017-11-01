@@ -14,8 +14,8 @@ import org.w3c.dom.Node;
  */
 public class AmazonItemSearch {
 
-    private static final String ACCESS_KEY_ID = "AKIAJ34LZKKXRWWVREQA";
-    private static final String SECRET_KEY = "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";
+    private static final String ACCESS_KEY_ID = "AKIAIKLBJZJSC65EHZAA";
+    private static final String SECRET_KEY = "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";
     private static final String ENDPOINT = "webservices.amazon.com";
 
     public static void main(String[] args) {
