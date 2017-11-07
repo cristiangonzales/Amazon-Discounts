@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64dfaecd-4814-4033-9745-814d459778ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Coding_style" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/amazondiscounts.src/camelcrawler/camelcrawler/spiders/AMZNCamelCrawler.py" afterPath="$PROJECT_DIR$/amazondiscounts.src/camelcrawler/camelcrawler/spiders/AMZNCamelCrawler.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/amazondiscounts.src/main/AMZNMain.py" afterPath="$PROJECT_DIR$/amazondiscounts.src/main/AMZNMain.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,18 +15,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Amazon_Discounts$AMZNMain.coverage" NAME="AMZNMain Coverage Results" MODIFIED="1509312846860" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/amazondiscounts.src/main" />
+    <SUITE FILE_PATH="coverage/Amazon_Discounts$AMZNMain.coverage" NAME="AMZNMain Coverage Results" MODIFIED="1509340596729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/amazondiscounts.src/main" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AMZNMain.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AMZNMain.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/amazondiscounts.src/main/AMZNMain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-103">
-              <caret line="1" column="30" lean-forward="true" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+            <state relative-caret-position="540">
+              <caret line="38" column="63" lean-forward="false" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="63" />
               <folding>
-                <element signature="e#80#94#0" expanded="true" />
-                <marker date="1509312075000" expanded="true" signature="107:154" ph="..." />
+                <element signature="e#88#102#0" expanded="true" />
+                <marker date="1509321293000" expanded="true" signature="115:162" ph="..." />
               </folding>
             </state>
           </provider>
@@ -34,14 +35,35 @@
       <file leaf-file-name="AMZNCamelCrawler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/amazondiscounts.src/camelcrawler/camelcrawler/spiders/AMZNCamelCrawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="465">
+              <caret line="38" column="34" lean-forward="false" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+              <folding>
+                <element signature="e#88#102#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AMZNWebdriver.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/amazondiscounts.src/main/AMZNWebdriver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding>
+                <element signature="e#118#132#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,6 +73,7 @@
       <list>
         <option value="$PROJECT_DIR$/amazondiscounts.src/main/AMZNMain.py" />
         <option value="$PROJECT_DIR$/amazondiscounts.src/camelcrawler/camelcrawler/spiders/AMZNCamelCrawler.py" />
+        <option value="$PROJECT_DIR$/amazondiscounts.src/main/AMZNWebdriver.py" />
       </list>
     </option>
   </component>
@@ -109,14 +132,22 @@
               <item name="Amazon-Discounts" type="b2602c69:ProjectViewProjectNode" />
               <item name="Amazon-Discounts" type="462c0819:PsiDirectoryNode" />
               <item name="amazondiscounts.src" type="462c0819:PsiDirectoryNode" />
+              <item name="camelcrawler" type="462c0819:PsiDirectoryNode" />
+              <item name="camelcrawler" type="462c0819:PsiDirectoryNode" />
+              <item name="spiders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Amazon-Discounts" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Amazon-Discounts" type="462c0819:PsiDirectoryNode" />
+              <item name="amazondiscounts.src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -175,14 +206,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1600" height="900" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2641357" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21309371" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23658872" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.078404404" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -212,30 +242,31 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/amazondiscounts.src/main/AMZNMain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="540">
+          <caret line="38" column="63" lean-forward="false" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="63" />
           <folding>
-            <element signature="e#80#94#0" expanded="true" />
-            <marker date="1509312075000" expanded="true" signature="107:154" ph="..." />
+            <element signature="e#88#102#0" expanded="true" />
+            <marker date="1509321293000" expanded="true" signature="115:162" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/amazondiscounts.src/AMZNSpiders/AMZNSpiders/spiders/AMZNCamelCrawler.py">
+    <entry file="file://$PROJECT_DIR$/amazondiscounts.src/camelcrawler/camelcrawler/spiders/AMZNCamelCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="38" column="34" lean-forward="false" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+          <folding>
+            <element signature="e#88#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amazondiscounts.src/main/AMZNWebdriver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/amazondiscounts.src/main/AMZNMain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
           <folding>
-            <element signature="e#80#94#0" expanded="true" />
-            <marker date="1509312075000" expanded="true" signature="107:154" ph="..." />
+            <element signature="e#118#132#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -245,8 +276,31 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#80#94#0" expanded="true" />
-            <marker date="1509312075000" expanded="true" signature="107:154" ph="..." />
+            <element signature="e#88#102#0" expanded="true" />
+            <marker date="1509321293000" expanded="true" signature="115:162" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amazondiscounts.src/AMZNSpiders/AMZNSpiders/spiders/AMZNCamelCrawler.py" />
+    <entry file="file://$PROJECT_DIR$/amazondiscounts.src/main/AMZNMain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#88#102#0" expanded="true" />
+            <marker date="1509321293000" expanded="true" signature="115:162" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amazondiscounts.src/main/AMZNMain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#88#102#0" expanded="true" />
+            <marker date="1509321293000" expanded="true" signature="115:162" ph="..." />
           </folding>
         </state>
       </provider>
@@ -258,29 +312,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/amazondiscounts.src/AMZNSpiders/AMZNSpiders/spiders/AMZNCamelCrawler.py">
+    <entry file="file://$PROJECT_DIR$/amazondiscounts.src/AMZNSpiders/AMZNSpiders/spiders/AMZNCamelCrawler.py" />
+    <entry file="file://$PROJECT_DIR$/amazondiscounts.src/main/AMZNMain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="540">
+          <caret line="38" column="63" lean-forward="false" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="63" />
+          <folding>
+            <element signature="e#88#102#0" expanded="true" />
+            <marker date="1509321293000" expanded="true" signature="115:162" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/amazondiscounts.src/camelcrawler/camelcrawler/spiders/AMZNCamelCrawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="465">
+          <caret line="38" column="34" lean-forward="false" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+          <folding>
+            <element signature="e#88#102#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/amazondiscounts.src/main/AMZNMain.py">
+    <entry file="file://$PROJECT_DIR$/amazondiscounts.src/main/AMZNWebdriver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-103">
-          <caret line="1" column="30" lean-forward="true" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        <state relative-caret-position="75">
+          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <element signature="e#80#94#0" expanded="true" />
-            <marker date="1509312075000" expanded="true" signature="107:154" ph="..." />
+            <element signature="e#118#132#0" expanded="true" />
           </folding>
         </state>
       </provider>
