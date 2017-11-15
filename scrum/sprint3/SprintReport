@@ -1,0 +1,63 @@
+% Author: Caleb Nick
+% Sprint 1 Report
+%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[document]{ragged2e}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+	\Large{\textbf{Sprint 3 Report}}\\
+	\Large{\textbf{Product: Amazon Discount Finder}}\\
+	\Large{\textbf{Team: ADF}}\\
+	\Large{\textbf{Date: November 19, 2017}}\\
+	
+	\vspace{-3mm}
+	
+	\section{Actions to stop doing}
+		\vspace{-3mm}
+		\tab \normalsize{We should stop putting off TSR's. }
+		
+	\section{Actions to start doing}
+		\vspace{-3mm}
+		\tab \normalsize{We should start communicating the dependencies of our subprojects. }
+		
+	\section{Actions to keep doing}
+		\vspace{-3mm}
+		\tab \normalsize{Things we should continue to do that will keep the dynamic of our group healthy is contributing and having a voice at Scrum meetings. We should continue to communicate on slack about our progress as well as in scrum meetings. We should continue having Wednesday workshops. }
+		
+	\section{Work completed \& not completed}
+		\vspace{-3mm}
+		\normalsize{The following user stories from the sprint plan were completed:}\\
+		\vspace{-3mm}
+		\begin{itemize}
+			\item As a user, I want to be able to search for items without any search restraints.
+			\item As a user, I want to be able to search for a specific item or item type.
+		\end{itemize}
+		\vspace{-3mm}
+		\normalsize{The uncompleted user stories are as follows:}\\
+		\vspace{-3mm}
+		\begin{itemize}		
+			\item As a developer, I want everything to work.
+		\end{itemize}
+		\vspace{-3mm}
+		
+	\section{Work completion rate}
+		\vspace{-3mm}
+		\normalsize{Sprint 3}\\
+		\vspace{-3mm}
+		\begin{itemize}
+		    %incomplete
+			\item Total number of user stories completed during the sprint: 2
+			\vspace{-3mm}
+			\item Total number of estimated ideal work hours completed during the sprint: 20
+			\vspace{-3mm}
+			\item Total number of days during the sprint: 14
+		\end{itemize}
+	
+\end{document}
