@@ -1,0 +1,62 @@
+% Author: Caleb Nick
+% Sprint 1 Report
+%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[document]{ragged2e}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+	\Large{\textbf{Sprint 2 Report}}\\
+	\Large{\textbf{Product: Amazon Discount Finder}}\\
+	\Large{\textbf{Team: ADF}}\\
+	\Large{\textbf{Date: November 5, 2017}}\\
+	
+	\vspace{-3mm}
+	
+	\section{Actions to stop doing}
+		\vspace{-3mm}
+		\tab \normalsize{We should stop sending absent notices late and after the fact. }
+		
+	\section{Actions to start doing}
+		\vspace{-3mm}
+		\tab \normalsize{We should start doing a peer programming workshop on Wednesdays. }
+		
+	\section{Actions to keep doing}
+		\vspace{-3mm}
+		\tab \normalsize{Things we should continue to do that will keep the dynamic of our group healthy is contributing and having a voice at Scrum meetings. We should continue to communicate on slack about our progress as well as in scrum meetings. }
+		
+	\section{Work completed \& not completed}
+		\vspace{-3mm}
+		\normalsize{The following user stories from the sprint plan were completed:}\\
+		\vspace{-3mm}
+		\begin{itemize}
+			\item As a user, I want to be able to access items from Amazon through the API.
+			\item As a developer, I want to be able to verify the prices of a product through scraping from camelcamelcamel.
+		\end{itemize}
+		\vspace{-3mm}
+		\normalsize{The uncompleted user stories are as follows:}\\
+		\vspace{-3mm}
+		\begin{itemize}		
+			\item As a developer, I want to be able to implement random proxy middleware so that when the Scrapy webscraping occurs, the website doesn't prevent scraping because it detects that I'm a bot.
+		\end{itemize}
+		\vspace{-3mm}
+		
+	\section{Work completion rate}
+		\vspace{-3mm}
+		\normalsize{Sprint 2}\\
+		\vspace{-3mm}
+		\begin{itemize}
+			\item Total number of user stories completed during the sprint: 2
+			\vspace{-3mm}
+			\item Total number of estimated ideal work hours completed during the sprint: 20
+			\vspace{-3mm}
+			\item Total number of days during the sprint: 14
+		\end{itemize}
+	
+\end{document}
