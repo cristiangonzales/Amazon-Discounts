@@ -1,6 +1,7 @@
 # Coding Style
 * Should follow dependency injection (DI) design pattern using snake-guice where appropriate (e.g., DAOs, Factories, etc.) (see https://github.com/google/guice/wiki/GettingStarted (good introduction to Guice and DI in general, but the Java implementation (snake-guice docs are weak but extremely similar to regular Guice for Java))
 * All files must have interfaces (unless they are implementation files)
+* All interface files must follow the convention (`I<name of implementation file>.py`)
 * Files should be seperated in folders in the amazondiscounts.src directory, organized by general purpose of each of the files (e.g., scraper files would be located in ~/amazondiscounts.src/scrapers)
 * Only one class per file
 * Class name and file name should be the same

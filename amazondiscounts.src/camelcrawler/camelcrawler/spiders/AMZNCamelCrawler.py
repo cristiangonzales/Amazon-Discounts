@@ -13,7 +13,7 @@ import threading
 import gevent.monkey; gevent.monkey.patch_thread()
 
 import sys
-sys.path.append('../../../main/AMZNWebdriver')
+sys.path.append('../../../asin/AMZNWebdriver')
 
 from AMZNWebdriver import AMZNWebdriver
 
@@ -26,8 +26,11 @@ class AMZNCamelCrawler(scrapy.Spider):
 
     # Returns iterable of Requests to begin to crawl from
     def start_requests(self):
+        logging.debug("Value of ASIN number: " + str(self.ASIN))
         # Create an instance of a CamelCamelCamel web driver
-        camelURL = AMZNWebdriver().CamelDriver()
+        driver = AMZNWebdriver()
+        driver.setASINNumber(self.ASIN)
+        camelURL = driver.CamelDriver()
 
         urls = [
             camelURL
