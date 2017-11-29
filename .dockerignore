@@ -1,4 +1,9 @@
+.DS_Store
+.git
+.idea
+coding-style.md
 LICENSE.md
 README.md
+/images/*
 /scrum/*
 /scripts/*

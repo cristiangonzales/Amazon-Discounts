@@ -7,7 +7,7 @@ This is a command line interface that employs Selenium, Scrapy, and Amazon API t
 ![](https://github.com/cristiangonzales/Amazon-Discounts/blob/master/images/amazon.jpg)
 ![](https://github.com/cristiangonzales/Amazon-Discounts/blob/master/images/camelcamelcamel.png)
 
-## Contents of the [Wiki](https://github.com/cristiangonzales/Amazon-Discounts/wiki/Welcome-to-the-Amazon-Discounts-Wiki!)
+## Contents of the [Wiki](https://github.com/cristiangonzales/Amazon-Discounts/wiki/)
 ---
 * Installation
 * Instructions
