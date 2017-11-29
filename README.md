@@ -1,19 +1,16 @@
-# Amazon Discounts v1.0
-## Contributors: Khai Hua <kdhua@ucsc.edu>, Nick Leeds <nleeds@ucsc.edu>, Caleb Farrand <ctfarran@ucsc.edu>, Cristian Gonzales <xcristian.gonzales@gmail.com>, Christopher Evans <chjevans@ucsc.edu>
-
+# The Amazon Discounts `README`
+#### Contributors: Khai Hua <kdhua@ucsc.edu>, Nick Leeds <nleeds@ucsc.edu>, Caleb Farrand <ctfarran@ucsc.edu>, Cristian Gonzales <xcristian.gonzales@gmail.com>, Christopher Evans <chjevans@ucsc.edu>
+---
 ## Purpose
-* Daemon that finds items discounted heavily (95-99% or user specified)
-* Notifies user and automatically purchases upon discount
+---
+This is a command line interface that employs Selenium, Scrapy, and Amazon API to find heavily discounted items on Amazon (at least 95%-99%, or user specified). We notify the user and automatically purchase the items upon selection by the user.
+![](https://github.com/cristiangonzales/Amazon-Discounts/blob/master/images/amazon.jpg)
+![](https://github.com/cristiangonzales/Amazon-Discounts/blob/master/images/camelcamelcamel.png)
 
-## APIs and Frameworks to be used
-* *snake-guice*
-* *python-daemon*
-* *python-amazon-product-api*
-* *Scrum (Agile Framework)*
-
-## Prerequisites for application use
-* Have Docker installed and running on your machine
-* Have Google Chrome (web browser) installed
-
-## Features
-* TBD
+## Contents of the [Wiki](https://github.com/cristiangonzales/Amazon-Discounts/wiki/Welcome-to-the-Amazon-Discounts-Wiki!)
+---
+* Installation
+* Instructions
+* General troubleshooting
+* Outlook for the next version
+* Running list of `TODO` items (*for developers*)
