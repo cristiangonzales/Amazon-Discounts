@@ -16,6 +16,7 @@ def itemSearch(keywords, pctoff, searchIndex = 'All'):
       print (item.DetailPageURL)
     return asin_list
 
+# test ,should return chairs that are 50% off
 def main():
     asin_results = itemSearch('chair', 50)
     for item in asin_results:
