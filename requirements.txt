@@ -1,8 +1,7 @@
 future>=0.15
+gevent>=1.2
 scrapy>=1.4
 scrapy-proxies>=0.4
 selenium>=3.6
-snake-guice>=0.4
 python-amazon-simple-product-api>=2.2
-python-daemon>=2.1
 python-interface>=1.0

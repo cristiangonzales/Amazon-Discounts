@@ -8,9 +8,23 @@ from interface import Interface
 """
     PriceHistory class that will serve as an object to contain all the data for a given ASIN
 """
-class AMZNPriceHistory(Interface):
+class IAMZNPriceHistory(Interface):
 
     def __init__(self):
+        pass
+
+    """
+        Set the ASIN value for this object instance
+        :param ASIN, as a string
+    """
+    def set_ASIN(self, ASIN):
+        pass
+
+    """
+        Get the ASIN value for this object, as a string
+        :return ASIN, as a string
+    """
+    def get_ASIN(self):
         pass
 
     """
