@@ -13,6 +13,7 @@
 	Amazon Discount Finder. All rights reserved.
 	Author: <author-name>
 """
+```
   and for shell scripts:
 ```
 	Amazon Discount Finder. All rights reserved.
