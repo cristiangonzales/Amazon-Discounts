@@ -7,19 +7,16 @@ config = {
     'associate_tag': 'kdhua-20',
     'locale': 'us'
 }
+
+# input: Asin
+# output [title, price, URL]
 def itemLookup(asin):
   api = amazonproduct.API(cfg=config)
   result = api.item_lookup(asin, ResponseGroup= 'Large')
-
+  l = []
+  # this for loop will only execute once.
   for item in result.Items.Item:
-    print (item.ItemAttributes.Title)
-    print (item.OfferSummary.LowestNewPrice.FormattedPrice)
-    print (item.DetailPageURL)
-    return (item.ASIN)
-
-  
-def main():
-  itemLookup('B00V2L5JRA')
-
-if __name__ == '__main__':
-  main()
+    l.append(item.ItemAttributes.Title)
+    l.append(item.OfferSummary.LowestNewPrice.FormattedPrice)
+    l.append(item.DetailPageURL)
+    return l
