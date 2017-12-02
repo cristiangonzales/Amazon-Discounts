@@ -1,5 +1,5 @@
 % Author: Caleb Nick
-% Sprint 1 Report
+% Sprint 3 Report
 %%%%%%%%%%%%%%%%%%%%
 
 \documentclass[11pt]{article}
@@ -36,14 +36,14 @@
 		\normalsize{The following user stories from the sprint plan were completed:}\\
 		\vspace{-3mm}
 		\begin{itemize}
-			\item As a user, I want to be able to search for items without any search restraints.
-			\item As a user, I want to be able to search for a specific item or item type.
+			\item As a developer, I want to be able to determine the average price over time of an item.
 		\end{itemize}
 		\vspace{-3mm}
 		\normalsize{The uncompleted user stories are as follows:}\\
 		\vspace{-3mm}
 		\begin{itemize}		
-			\item As a developer, I want everything to work.
+			\item As a developer, I want to scrape everything off of goldbox.
+			\item As a user, I want to have items added to my shopping cart.
 		\end{itemize}
 		\vspace{-3mm}
 		
@@ -53,7 +53,7 @@
 		\vspace{-3mm}
 		\begin{itemize}
 		    %incomplete
-			\item Total number of user stories completed during the sprint: 2
+			\item Total number of user stories completed during the sprint: 1
 			\vspace{-3mm}
 			\item Total number of estimated ideal work hours completed during the sprint: 20
 			\vspace{-3mm}
