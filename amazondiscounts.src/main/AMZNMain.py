@@ -12,7 +12,7 @@ import gevent.monkey; gevent.monkey.patch_thread()
 
 from sys import path; path.append("../asin/")
 
-from AMZNSpiderFactory import AMZNSpiderFactory
+from AMZNCamelScraper import AMZNCamelScraper
 
 """
     This is the root class.
@@ -20,8 +20,9 @@ from AMZNSpiderFactory import AMZNSpiderFactory
 class AMZNMain:
     def __init__(self):
         # TODO: Add Amazon API end here
-        # Example of client call (for an iPhone)
-        AMZNSpiderFactory().AccessASIN("B00YD545CC")
+        # Example of client call (for numerous items)
+        asinArr = ["B00YD545CC", "B0009VELG4", "B06XHTKFH3", "B01LWWY3E2"]
+        AMZNCamelScraper().AccessASIN(asinArr)
 
 if __name__ == "__main__":
     # Setting root logging level to DEBUG

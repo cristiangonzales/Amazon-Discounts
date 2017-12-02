@@ -36,7 +36,7 @@ class IAMZNPriceHistory(Interface):
 
     """
         Get the current price from scraped data from our spider.
-        :return: price, as a string
+        :return: price (or "Out of stock"), as a string
     """
     def get_current_price(self):
         pass
