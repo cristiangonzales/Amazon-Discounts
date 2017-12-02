@@ -39,6 +39,7 @@ class IAMZNCamelScraper(Interface):
     """
         Select a random proxy as a string to be selected for our Chrome Driver options. Proxies
         may be HTTP or HTTPS.
+        :return random proxy as a string
     """
     def select_proxy_server(self):
         pass

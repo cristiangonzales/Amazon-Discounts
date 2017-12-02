@@ -5,12 +5,13 @@
 
 import logging
 
-import sys
-
 import threading
 import gevent.monkey; gevent.monkey.patch_thread()
 
-from sys import path; path.append("../asin/")
+import os
+from sys import path; path.append(
+    os.path.join(os.path.dirname(__file__), "../asin/")
+)
 
 from AMZNCamelScraper import AMZNCamelScraper
 
@@ -21,8 +22,7 @@ class AMZNMain:
     def __init__(self):
         # TODO: Add Amazon API end here
         # Example of client call (for numerous items)
-        asinArr = ["B00YD545CC", "B0009VELG4", "B06XHTKFH3", "B01LWWY3E2"]
-        AMZNCamelScraper().AccessASIN(asinArr)
+        AMZNCamelScraper().AccessASIN(["B00YD545CC", "B0009VELG4", "B06XHTKFH3", "B01LWWY3E2"])
 
 if __name__ == "__main__":
     # Setting root logging level to DEBUG

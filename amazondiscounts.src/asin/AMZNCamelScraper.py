@@ -5,6 +5,7 @@
 
 import logging
 
+import os
 import sys
 from platform import system
 
@@ -38,18 +39,27 @@ class AMZNCamelScraper(implements(IAMZNCamelScraper)):
 
         # See the user's system information, and choose the appropriate webdriver executable, accordingly
         if system() == "Darwin":
+            # Configure the path
+            chrome_path = os.path.join(os.path.dirname(__file__), '../chromedriver/darwin/chromedriver')
+            # Initialize our web driver
             self.browser = webdriver.Chrome(
-                executable_path='../chromedriver/darwin/chromedriver',
+                executable_path=chrome_path,
                 chrome_options=options
             )
         elif system() == "Linux":
+            # Configure the path
+            chrome_path = os.path.join(os.path.dirname(__file__), '../chromedriver/linux/chromedriver')
+            # Initialize our web driver
             self.browser = webdriver.Chrome(
-                executable_path='../chromedriver/linux/chromedriver',
+                executable_path=chrome_path,
                 chrome_options=options
             )
         elif system() == "Windows":
+            # Configure the path
+            chrome_path = os.path.join(os.path.dirname(__file__), '../chromedriver/windows/chromedriver.exe')
+            # Initialize our web driver
             self.browser = webdriver.Chrome(
-                executable_path='/chromedriver/windows/chromedriver.exe',
+                executable_path=chrome_path,
                 chrome_options=options
             )
         else:
@@ -189,10 +199,13 @@ class AMZNCamelScraper(implements(IAMZNCamelScraper)):
     """
         Select a random proxy as a string to be selected for our Chrome Driver options. Proxies
         may be HTTP or HTTPS.
+        :return random proxy as a string
     """
     def select_proxy_server(self):
+        # Configure the relative path so that we can open the file
+        path_to_proxylist = os.path.join(os.path.dirname(__file__), '../../proxy-list.txt')
         random_proxy = random.choice(
-            open('../../proxy-list.txt').readlines()
+            open(path_to_proxylist).readlines()
         )
         logging.info("Random proxy: " + random_proxy)
         return random_proxy
