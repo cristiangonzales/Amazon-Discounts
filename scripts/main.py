@@ -4,29 +4,29 @@ import goldscraper
 import sys
 
 def usage():
-    print ("usage: <discout> <pages> <output filename> [category]")
+    print ("usage: <discount> <pages> <output filename> [category]")
     sys.exit(1
 
-def checkDiscount(asin):
-    title_price_URL_list = itemLookup(asin)
-    camel_price = camelCamelCamelScraper(asin)
-    if (price_URL_tuple[0] / camel_price * 100) >= sys.argv[0]:
-        out_file.write("Name: " + title_price_URL_list[0] + " Amazon price: " + title_price_URL_list[1] + " Camel price " + camel_price + " discount: " + "URL: " + title_price_URL_list[2])
+def check_discount(asin):
+    titlePriceURLList = itemLookup(asin)
+    camelPrice = camelCamelCamelScraper(asin)
+    if (titlePriceURLList[0] / camelPrice * 100) >= sys.argv[0]:
+        outFile.write("Name: " + titlePriceURLList[0] + " Amazon price: " + titlePriceURLList[1] + " Camel price " + camelPrice + " discount: " + "URL: " + titlePriceURLList[2])
 
 def main():
-    out_file = open(sys.argv[-2])
+    outFile = open(sys.argv[-2])
     if len(sys.argv) == 3:
-        asin_list = goldscraper.scrape_goldbox(sys.argv[2])
-        for asin in asin_list:
-            checkDiscount(asin)
+        asinList = goldscraper.scrape_goldbox(sys.argv[2])
+        for asin in asinList:
+            check_discount(asin)
     elif len(sys.argv) == 4:
-        asin_results = itemSearch.itemSearch(sys.argv[4], sys.argv[1])
-        for item in asin_results:
-            checkDiscount(asin)
+        asinResults = itemSearch.item_search(sys.argv[4], sys.argv[1])
+        for item in asinResults:
+            check_discount(asin)
     else:
         usage()
 
-    out_file.close()
+    outFile.close()
 
 if __name__ == '__main__':
     main()
