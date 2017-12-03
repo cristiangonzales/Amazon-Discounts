@@ -1,9 +1,8 @@
-import re, os
+import re
 import time
 import random
 from selenium import webdriver
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.common.action_chains import ActionChains
+
 
 def unicode_to_ascii(listOfStr):
 	for i in range(len(listOfStr)):

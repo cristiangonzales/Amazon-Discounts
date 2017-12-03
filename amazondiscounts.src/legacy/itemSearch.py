@@ -8,9 +8,9 @@ config = {
 'associate_tag': 'kdhua-20',
 'locale': 'us'
 }
-def item_search(keywords, pctoff, searchIndex = 'All'):
+def item_search(keywords, pctoff):
     api = amazonproduct.API(cfg=config)
-    result = api.item_search(searchIndex,Keywords=keywords, ResponseGroup='Large', MinPercentageOff=pctoff)
+    result = api.item_search(SearchIndex='All',Keywords=keywords, ResponseGroup='Large', MinPercentageOff=pctoff)
     asinList = []
     for item in result:
         asinList.append(item.ASIN)

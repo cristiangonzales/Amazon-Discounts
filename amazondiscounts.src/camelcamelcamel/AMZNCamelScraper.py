@@ -20,16 +20,13 @@ from bs4 import BeautifulSoup
 import re
 from AMZNPriceHistory import AMZNPriceHistory
 
-from interface import implements
-from IAMZNCamelScraper import IAMZNCamelScraper
-
 """
     This is the class that employs the use of a webdriver in order to obtain information to be
     passed to the client that is using the Amazon API calls. The logic behind implementing Selenium is to outsmart
     the Distil Networks server, wait for the JavaScript to load after our first request (using a randomized wait
     time), and then create a second request to obtain the appropriate HTML source.
 """
-class AMZNCamelScraper(implements(IAMZNCamelScraper)):
+class AMZNCamelScraper:
 
     def __init__(self):
 
@@ -70,35 +67,26 @@ class AMZNCamelScraper(implements(IAMZNCamelScraper)):
 
     """
         Module that is to be used to access the page source and store all the data inside a PriceHistory object,
-        and an array of PriceHistory objects is to be passed back to the caller.
+        and a single PriceHistory object is to be passed back to the caller.
         :param ASIN: The ASIN number for the client to give.
         :return: An object with all the information that the client needs (details can be viewed in its respective
                 object file).
     """
-    def AccessASIN(self, arrayOfASIN):
+    def AccessASIN(self, ASIN):
         try:
-            # Final array of objects to pass back to the caller
-            priceHistoryArray = []
+            # First request to camelcamelcamel (expects Distil Networks pop-up, which we don't actually use)
+            self.browser.get("https://camelcamelcamel.com/search?sq=" + ASIN)
 
-            # Loop through the array of ASIN
-            for ASIN in arrayOfASIN:
-                # First request to camelcamelcamel (expects Distil Networks pop-up, which we don't actually use)
-                self.browser.get("https://camelcamelcamel.com/search?sq=" + ASIN)
-
-                # Wait time before the second request
-                waitTime = random.uniform(7, 12)
-                time.sleep(waitTime)
-                # Make a second request to get the source (this time successful)
-                html = self.browser.page_source
-
-                # Return the parsed HTML, stored into an array of PriceHistory objects
-                obj = self.parse(html, ASIN)
-                priceHistoryArray.append(obj)
+            # Wait time before the second request
+            waitTime = random.uniform(7, 12)
+            time.sleep(waitTime)
+            # Make a second request to get the source (this time successful)
+            html = self.browser.page_source
             # Close and quit the browser
             self.browser.close()
             self.browser.quit()
-            # Return the final array of PriceHistory objects to the caller
-            return priceHistoryArray
+            # Return the final PriceHistory object to the caller
+            return self.parse(html, ASIN)
 
         except Exception as e:
             logging.error(str(e) +
@@ -133,7 +121,7 @@ class AMZNCamelScraper(implements(IAMZNCamelScraper)):
                 # Now search for a subset, which would be the actual price value
                 tempStr = re.search('<td>Current<\/td>\n<td>*.*', _soupStr).group(0)
                 currentPrice = re.search('\$[0-9]*\.[0-9]{2}', tempStr).group(0)[1:]
-                logging.debug("Current price for " + ASIN + ": " + currentPrice)
+                # logging.debug("Current price for " + ASIN + ": " + currentPrice)
                 obj.set_current_price(currentPrice)
             except:
                 # In the case that the item is not in stock, do a regex search for "Not in Stock".
@@ -141,10 +129,10 @@ class AMZNCamelScraper(implements(IAMZNCamelScraper)):
                 try:
                     tempStr = re.search('<td>Current<\/td>\n<td>*.*', _soupStr).group(0)
                     currentPrice = re.search('Not in Stock', tempStr).group(0)
-                    logging.debug("Current price for " + ASIN + ": " + currentPrice)
+                    # logging.debug("Current price for " + ASIN + ": " + currentPrice)
                     obj.set_current_price(currentPrice)
                 except Exception as e:
-                    logging.error(e)
+                    # logging.error(e)
                     pass
 
             # Try to find the highest price. If it does not exist for this item, we will leave it to
@@ -152,11 +140,11 @@ class AMZNCamelScraper(implements(IAMZNCamelScraper)):
             try:
                 _soupStr = str(soup.find(class_="highest_price"))
                 highestPrice = re.search('\$[0-9]*\.[0-9]{2}', _soupStr).group(0)[1:]
-                logging.debug("Highest price for " + ASIN + ": " + highestPrice)
+                # logging.debug("Highest price for " + ASIN + ": " + highestPrice)
                 # Store the value as a string
                 obj.set_highest_price(highestPrice)
             except Exception as e:
-                logging.error(e)
+                # logging.error(e)
                 pass
 
             # Try to find the highest price. If it does not exist for this item, we will leave it to
@@ -164,11 +152,11 @@ class AMZNCamelScraper(implements(IAMZNCamelScraper)):
             try:
                 _soupStr = str(soup.find(class_="lowest_price"))
                 lowestPrice = re.search('\$[0-9]*\.[0-9]{2}', _soupStr).group(0)[1:]
-                logging.debug("Lowest price for " + ASIN + ": " + lowestPrice)
+                # logging.debug("Lowest price for " + ASIN + ": " + lowestPrice)
                 # Store the value as a string
                 obj.set_lowest_price(lowestPrice)
             except Exception as e:
-                logging.error(e)
+                # logging.error(e)
                 pass
 
             # Try to find the average price. If it does not exist for this item, we will leave it to
@@ -179,11 +167,11 @@ class AMZNCamelScraper(implements(IAMZNCamelScraper)):
                 tempStr = re.search('<td>Average <sup>\+<\/sup><\/td>\n*.*', _soupStr).group(0)
                 # Now search for a subset, which would be the actual price value
                 averagePrice = re.search('\$[0-9]*\.[0-9]{2}', tempStr).group(0)[1:]
-                logging.debug("Average price for " + ASIN + ": " + averagePrice)
+                # logging.debug("Average price for " + ASIN + ": " + averagePrice)
                 # Store the value as a string
                 obj.set_average_price(averagePrice)
             except Exception as e:
-                logging.error(e)
+                # logging.error(e)
                 pass
 
             # Return the final object to the caller

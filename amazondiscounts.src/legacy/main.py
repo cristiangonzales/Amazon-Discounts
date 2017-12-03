@@ -21,8 +21,8 @@ def is_float(thing):
     try:
         float(thing)
         return True
-    except:
-        return False
+    except ValueError:
+        raise ValueError("Invalid number!")
 
 def main():
     assert(len(sys.argv) == 4)
