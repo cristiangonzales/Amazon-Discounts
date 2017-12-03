@@ -1,7 +1,7 @@
 from past import autotranslate
 autotranslate(['amazonproduct'])
 import amazonproduct
-
+import time
 config = {
     'access_key': 'AKIAIKLBJZJSC65EHZAA',
     'secret_key': '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',
@@ -12,11 +12,16 @@ config = {
 # input: Asin
 # output: [title, price, URL]
 def item_lookup(asin):
-    api = amazonproduct.API(cfg=config)
-    result = api.item_lookup(asin, ResponseGroup= 'Large')
-    titlePriceURLList = []
-    item = result.Items.Item
-    titlePriceURLList.append(item.ItemAttributes.Title)
-    titlePriceURLList.append(item.OfferSummary.LowestNewPrice.FormattedPrice)
-    titlePriceURLList.append(item.DetailPageURL)
-    return titlePriceURLList
+    time.sleep(1)
+    try:
+        api = amazonproduct.API(cfg=config)
+        result = api.item_lookup(asin, ResponseGroup= 'Large')
+        titlePriceURLList = []
+        item = result.Items.Item
+        titlePriceURLList.append(str(item.ItemAttributes.Title))
+        price = str(item.OfferSummary.LowestNewPrice.FormattedPrice).replace('$', '')
+        titlePriceURLList.append(price)
+        titlePriceURLList.append(str(item.DetailPageURL))
+        return titlePriceURLList
+    except:
+        return ['Except','Except','Except']
