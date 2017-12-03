@@ -3,10 +3,10 @@
 # Author: Cristian Gonzales
 
 # Check if virtualenv is installed. If so, continue, and if not, then go ahead and install it.
-if python -c "import virtualenv" &> /dev/null; then
+if python3 -c "import virtualenv" &> /dev/null; then
     continue
 else
-    pip install virtualenv
+    pip3 install virtualenv
 fi
 
 # Check to see if a virtualenv variable is configured. If it isn't, then we will go one level above
@@ -21,7 +21,11 @@ if [[ -z "${VIRTUAL_ENV}" ]]; then
 	source bin/activate
 	cd Amazon-Discounts/scripts
 
-	# TODO: pip install all required dependencies here
+	# pip install all required dependencies
+	pip3 install bs4
+	pip3 install gevent
+	pip3 install selenium
+	pip3 install python-amazon-simple-product-api
 
 # This else conditional assumes that you have ran the script once and already have all the required
 # packages and dependencies installed.
@@ -30,4 +34,4 @@ else
 
 # Go into the src folder and run the program
 cd ../amazondiscounts.src/main/
-python AMZNMain.py
+python3 AMZNMain.py

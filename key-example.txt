@@ -1,4 +1,4 @@
-Please remove me, only meant to be used for development purposes. Thank you!
+Please remove me, I'm only meant to be used for development purposes. Thank you!
 
 'access_key': AKIAIKLBJZJSC65EHZAA,
 'secret_key': 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,
