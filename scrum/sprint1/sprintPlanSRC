@@ -1,0 +1,66 @@
+% Author: Caleb Nick
+% Sprint 1 Plan
+%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[document]{ragged2e}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+	\Large{\textbf{Sprint 1 Plan}}\\
+	\Large{\textbf{Product: Amazon Discount Finder}}\\
+	\Large{\textbf{Team: ADF}}\\
+	\Large{\textbf{Date: October 23, 2017}}\\
+	\Large{\textbf{Revised: October 30, 2017}}\\
+	
+	\vspace{-3mm}
+	
+	\section{Goal}
+		\vspace{-3mm}
+		\tab \normalsize{We want to learn the tools we are working with and familiarize with python.}
+		
+
+	\section{Task Listing}
+		\vspace{-3mm}
+		\begin{itemize}
+			\item As a developer, I want to decide what tools we will be working with and familiarize myself with them.
+			\begin{itemize}
+			    \item Task 1: Learn python (8 hours)
+			    \item Task 2: Research Amazon API (2 hours)
+			\end{itemize}
+			Total: 10 hours
+			\item As a user, I want to be able to access items from amazon.
+			\begin{itemize}
+			    \item Task 1: Utilize amazon API (10 hours)
+			\end{itemize}
+			Total: 10 hours
+		\end{itemize}
+		
+	\section{Team Roles}
+		\vspace{-3mm}
+		\begin{itemize}
+		    \item Khai Hua, Developer
+		    \item Caleb Farrand, Developer
+		    \item Nick Leeds, Developer
+		    \item Chris Gonzales, Developer
+		    \item Chris Evans, Developer
+		\end{itemize}
+	\section{Initial Task Assignment}
+	    \vspace{-3mm}
+	    \begin{itemize}
+		    \item Khai Hua Story 1 task 1 \& 2
+		    \item Caleb Farrand Story 1 task 2 \& story 2 task 1
+		    \item Nick Leeds Story 1 task 1 \& 2
+		    \item Chris Gonzales Story 1 task 2 \& story 2 task 1
+		    \item Chris Evans Story 1 task 2 \& story 2 task 1
+		\end{itemize}
+	\section{Burnup chart included separately}
+	\section{Scrum board found on Trello}
+	\section{Scrum Times}
+	    W-F after class, and M at 4:30 pm with TA.
+\end{document}
