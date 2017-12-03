@@ -1,4 +1,4 @@
-import re, os
+import re
 import time
 import random
 from selenium import webdriver
@@ -18,7 +18,6 @@ def scrape_goldbox(numOfPages):
 	while(j<numOfPages):
 		strOfContent = driver.page_source
 		#try:
-
 			# for tag in soup.findAll("a", href=True):
 			# 	print tag["href"]
 			# strOfContent = str(soup)
@@ -37,6 +36,5 @@ def scrape_goldbox(numOfPages):
 		next_button.click()
 		j += 1
 		time.sleep(random.random()*10)
-	print unicode_to_ascii(asins)
 	return unicode_to_ascii(asins)
 #scrape_goldbox(5)

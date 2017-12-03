@@ -19,7 +19,7 @@ def cartCreate(asin):
      }
      #TODO: create a virtual cart with cart_create()
      cart = api.cart_create(Items=data, Quantity=1)
-     cart = api.cart_create('OfferListingId=item.Offers.Offer.OfferListing.OfferListingId, Quantity=1)
+     cart = api.cart_create('OfferListingId=item.Offers.Offer.OfferListing.OfferListingId, Quantity=1')
      # the above code doesn't work
      break
 
