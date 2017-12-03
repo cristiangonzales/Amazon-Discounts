@@ -1,0 +1,76 @@
+% Author: Caleb Nick
+% Sprint 1 Plan
+%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[document]{ragged2e}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+	\Large{\textbf{Sprint 3 Plan}}\\
+	\Large{\textbf{Product: Amazon Discount Finder}}\\
+	\Large{\textbf{Team: ADF}}\\
+	\Large{\textbf{Date: November 19, 2017}}\\
+	%\Large{\textbf{Revised:  30, 2017}}\\
+	
+	\vspace{-3mm}
+	
+	\section{Goal}
+		\vspace{-3mm}
+		\tab \normalsize{We want to access items through the Amazon API and scrape from camelcamelcamel.}
+		
+
+	\section{Task Listing}
+		\vspace{-3mm}
+		\begin{itemize}
+			\item As a developer, I want to be able to determine the average price over time of an item.
+			\begin{itemize}
+			    \item Task 1: Find out how to get unbanned from camelcamelcamel (6 hour)
+			    \item Task 2: Scrape relevant data off of correct web page (1 hours)
+			    \item Task 3: Verify correctness of camel scraper
+			\end{itemize}
+			Total: 7 hours
+			\item As a developer, I want to scrape everything off of goldbox.
+			\begin{itemize}
+			    \item Task 1: Find out the xpath of the next button (1 hours)
+			    \item Task 2: Find out how to click on something using selenium given an xpath (2 hour)
+			    \item Task 3: Figure out how to get the xpath for each iteration. (5 hours)
+			\end{itemize}
+			Total: 8 hours
+			\item As a user, I want to have items added to my shopping cart.
+			\begin{itemize}
+			    \item Task 1: Figure out which API call to use  (1 hours)
+			    \item Task 2: Find out how to create and add to a shopping cart (1 hours)
+                \item Task 3: Find out how to save a shopping cart to a specific user. (3 hours)
+			\end{itemize}
+			 Total: 5 hours
+		\end{itemize}
+		
+	\section{Team Roles}
+		\vspace{-3mm}
+		\begin{itemize}
+		    \item Khai Hua, Amazon API
+		    \item Caleb Farrand, Goldbox scraper and Camel scraper helper
+		    \item Nick Leeds, Amazon API
+		    \item Chris Gonzales, Camel Scraper
+		    \item Chris Evans, Camel Scraper
+		\end{itemize}
+	\section{Initial Task Assignment}
+	    \vspace{-3mm}
+	    \begin{itemize}
+		    \item Khai Hua Story 3 task 1
+		    \item Caleb Farrand Story 1 task 1 \& story 2 task 1
+		    \item Nick Leeds Story 3 task 1
+		    \item Chris Gonzales Story 1 task 1
+		    \item Chris Evans Story 1 task 1
+		\end{itemize}
+	\section{Burnup chart included separately}
+	\section{Scrum board found on Trello}
+	\section{Scrum Times}
+	    W-F after class, and M at 4:30 pm with TA.
+\end{document}
