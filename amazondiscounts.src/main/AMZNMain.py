@@ -57,7 +57,7 @@ class AMZNMain:
             raise Exception("Sorry, you did not enter a number between 1 and 99!")
             sys.exit(1)
         # Prompt the user for an output text file to write to
-        outputFile = open("amazon-discounts.log", 'w')
+        outputFile = open("../../amazon-discounts.log", 'w')
         # Optional argument as determined by the user
         optionArg = input("Please enter a type of item you wish to search for!\n"
                           + "If you do not have a particular type of item,\n"
