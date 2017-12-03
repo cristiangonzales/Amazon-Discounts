@@ -1,0 +1,74 @@
+% Author: Caleb Nick
+% Sprint 1 Plan
+%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[document]{ragged2e}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+	\Large{\textbf{Sprint 2 Plan}}\\
+	\Large{\textbf{Product: Amazon Discount Finder}}\\
+	\Large{\textbf{Team: ADF}}\\
+	\Large{\textbf{Date: November 5, 2017}}\\
+	%\Large{\textbf{Revised:  30, 2017}}\\
+	
+	\vspace{-3mm}
+	
+	\section{Goal}
+		\vspace{-3mm}
+		\tab \normalsize{We want to access items through the Amazon API and scrape from camelcamelcamel.}
+		
+
+	\section{Task Listing}
+		\vspace{-3mm}
+		\begin{itemize}
+			\item As a user, I want to be able to access items from Amazon through the API.
+			\begin{itemize}
+			    \item Task 1: Sign up for AWS, Amazon Advertising (1 hour)
+			    \item Task 2: Write code to find items (6 hours)
+			\end{itemize}
+			Total: 7 hours
+			\item  As a developer, I want to be able to verify the prices of a product through scraping from camelcamelcamel.
+			\begin{itemize}
+			    \item Task 1: Learn webscraping (3 hours)
+			    \item Task 2: Pick best webscraper library (1 hour)
+			    \item Task 3: Write webscraper (7 hours)
+			\end{itemize}
+			Total: 11 hours
+			\item As a developer, I want to be able to implement random proxy middleware so that when the Scrapy webscraping occurs, the website doesn't prevent scraping because it detects that I'm a bot.
+			\begin{itemize}
+			    \item Task 1: Figure out how to do it (1 hours)
+			    \item Task 2: Implement the solution (1 hours)
+			\end{itemize}
+			 Total: 2 hours
+		\end{itemize}
+		
+	\section{Team Roles}
+		\vspace{-3mm}
+		\begin{itemize}
+		    \item Khai Hua, Developer
+		    \item Caleb Farrand, Developer
+		    \item Nick Leeds, Developer
+		    \item Chris Gonzales, Developer
+		    \item Chris Evans, Developer
+		\end{itemize}
+	\section{Initial Task Assignment}
+	    \vspace{-3mm}
+	    \begin{itemize}
+		    \item Khai Hua Story story 1 task 1
+		    \item Caleb Farrand Story 1 task 1 \& story 2 task 1
+		    \item Nick Leeds Story 1 task 1
+		    \item Chris Gonzales Story 2 task 1 \& story 3 task 1 \& 2
+		    \item Chris Evans Story 2 task 1 \& 2
+		\end{itemize}
+	\section{Burnup chart included separately}
+	\section{Scrum board found on Trello}
+	\section{Scrum Times}
+	    W-F after class, and M at 4:30 pm with TA.
+\end{document}
