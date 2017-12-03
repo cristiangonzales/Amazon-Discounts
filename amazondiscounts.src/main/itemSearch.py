@@ -1,5 +1,5 @@
-# from past import autotranslate
-# autotranslate(['amazonproduct'])
+from past import autotranslate
+autotranslate(['amazonproduct'])
 import amazonproduct
 
 config = {

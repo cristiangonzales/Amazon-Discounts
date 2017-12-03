@@ -2,5 +2,4 @@ bs4>=0.0.1
 future>=0.15
 gevent>=1.2
 selenium>=3.6
-python-amazon-simple-product-api>=2.2
 python-interface>=1.0

@@ -10,7 +10,7 @@ import itemSearch
 import goldscraper
 
 def usage():
-    print "usage: <discount> <output filename> <category | number of pages>"
+    print("usage: <discount> <output filename> <category | number of pages>")
     sys.exit(1)
 
 def check_discount(discount, averagePrice, price):
