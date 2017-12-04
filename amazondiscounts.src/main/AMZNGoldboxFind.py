@@ -57,6 +57,21 @@ class AMZNGoldboxFind:
                 '/Amazon-Discounts/wiki/Installation'
             )
 
+    def tryNextPage(self, xPixels):
+        xPixelTotal = xPixels
+        i = 0
+        while i < 10:
+            try:
+                next_button = self.browser.find_elements_by_partial_link_text('Next')[0]
+                self.browser.execute_script("window.scrollTo(0," + xPixelTotal + ")")
+                next_button.click()
+                return True
+            except:
+                xPixelTotal += xPixels
+            i += 1
+        return False
+
+
     """
         Scraping Goldbox. Instantiates the unicode_to_ascii method in order to return a list of ASIN strings
         to the caller.
@@ -83,9 +98,11 @@ class AMZNGoldboxFind:
             except Exception as e:
                 logging.error("Error: unable to connect to Goldbox for scraping. Error: " + e)
             # Click for the next page
-            next_button = self.browser.find_elements_by_partial_link_text('Next')[0]
-            self.browser.execute_script("window.scrollTo(0,4687)")
-            next_button.click()
+            numPixelScroll = 300
+            tryNextPage(numPixelScroll)
+            # next_button = self.browser.find_elements_by_partial_link_text('Next')[0]
+            # self.browser.execute_script("window.scrollTo(0,4687)")
+            # next_button.click()
             j += 1
             time.sleep(random.random() * 10)
         self.browser.close()
