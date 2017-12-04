@@ -162,7 +162,7 @@ class AMZNMain:
         :return bool (dependent on if this is a discount that we want or not).
     """
     def check_discount(self, discount, averagePrice, price):
-        return (float(price) / float(averagePrice) * 100) >= float(discount)
+        return (100 - (float(price) / float(averagePrice) * 100)) >= float(discount)
 
     """
         Once we do all the appropriate comparisons, we will create the cart and
