@@ -60,10 +60,10 @@ class AMZNGoldboxFind:
     def tryNextPage(self, xPixels):
         xPixelTotal = xPixels
         i = 0
-        while i < 10:
+        while i < 50:
             try:
                 next_button = self.browser.find_elements_by_partial_link_text('Next')[0]
-                self.browser.execute_script("window.scrollTo(0," + xPixelTotal + ")")
+                self.browser.execute_script("window.scrollTo(0," + str(xPixelTotal) + ")")
                 next_button.click()
                 return True
             except:
@@ -99,7 +99,7 @@ class AMZNGoldboxFind:
                 logging.error("Error: unable to connect to Goldbox for scraping. Error: " + e)
             # Click for the next page
             numPixelScroll = 300
-            tryNextPage(numPixelScroll)
+            success = self.tryNextPage(numPixelScroll)
             # next_button = self.browser.find_elements_by_partial_link_text('Next')[0]
             # self.browser.execute_script("window.scrollTo(0,4687)")
             # next_button.click()
