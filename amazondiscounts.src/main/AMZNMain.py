@@ -79,7 +79,12 @@ class AMZNMain:
         # discount, and then we will write to the file
         for asin in asinList:
             # Here, we do an item lookup and get the title, current price, and offer url for this ASIN
-            titlePriceURLList = self.item_lookup(str(asin))
+            # In the case that the item is too low, then it will simply continue onto the next iteration
+            # of the loop.
+            try:
+                titlePriceURLList = self.item_lookup(str(asin))
+            except:
+                continue
             title = titlePriceURLList[0]
             currentPrice = titlePriceURLList[1]
             offerUrl = titlePriceURLList[2]
