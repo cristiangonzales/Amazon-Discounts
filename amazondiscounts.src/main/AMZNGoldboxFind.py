@@ -22,10 +22,6 @@ from selenium import webdriver
 class AMZNGoldboxFind:
 
     def __init__(self):
-        # TODO: Initialize the options for our Chrome Driver
-        options = Options()
-        options.add_argument('--window-size=' )
-
         # See the user's system information, and choose the appropriate webdriver executable, accordingly
         if system() == "Darwin":
             # Configure the path
@@ -33,7 +29,6 @@ class AMZNGoldboxFind:
             # Initialize our web driver
             self.browser = webdriver.Chrome(
                 executable_path=chrome_path
-                # chrome_options=
             )
         elif system() == "Linux":
             # Configure the path
@@ -41,7 +36,6 @@ class AMZNGoldboxFind:
             # Initialize our web driver
             self.browser = webdriver.Chrome(
                 executable_path=chrome_path
-                # chrome_options=
             )
         elif system() == "Windows":
             # Configure the path
@@ -49,7 +43,6 @@ class AMZNGoldboxFind:
             # Initialize our web driver
             self.browser = webdriver.Chrome(
                 executable_path=chrome_path
-                # chrome_options=
             )
         else:
             raise WebDriverException(
@@ -96,7 +89,7 @@ class AMZNGoldboxFind:
                 result = list(set(result))
                 asins = asins + result
             except Exception as e:
-                logging.error("Error: unable to connect to Goldbox for scraping. Error: " + e)
+                pass
             # Click for the next page
             numPixelScroll = 300
             success = self.tryNextPage(numPixelScroll)
@@ -115,7 +108,8 @@ class AMZNGoldboxFind:
         :listOfStr: The list of unicode values (ASIN) to be returned to the original caller of this class.
     """
     def unicode_to_ascii(self, listOfStr):
+        newArray = []
         for i in range(len(listOfStr)):
-            asciiStr = listOfStr[i].encode('utf-8', errors='backslashreplace')
-            listOfStr[i] = asciiStr
-        return listOfStr
+            newArray.append(str(listOfStr[i]))
+            logging.debug("ASIN number: " + str(newArray[i]))
+        return newArray
