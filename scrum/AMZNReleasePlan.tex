@@ -1,0 +1,58 @@
+% Release Plan
+%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[document]{ragged2e}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+	\Large{\textbf{Release Plan}}\\
+	\Large{\textbf{Product: Amazon Discount Finder}}\\
+	\Large{\textbf{Team: ADF}}\\
+	\Large{\textbf{Date: October 10, 2017}}\\
+	%\Large{\textbf{Revised:  30, 2017}}\\
+	
+	\vspace{-3mm}
+	
+	\section*{High Level Goals}
+		\vspace{-3mm}
+		\begin{itemize}
+			\item Daemon that finds items discounted heavily (95-99\% or user specified).
+			\item Daemon notifies user of items found.
+			\item Daemon automatically purchases items.
+		\end{itemize}
+	\section*{Sprint 1}
+		\vspace{-3mm}
+		\begin{itemize}
+		    \item (3) As a developer, I want to learn and get used to the tools and systems and setup my environment
+		    \item (8) As a developer, I want to be able to access Amazons items
+		\end{itemize}
+	\section*{Sprint 2}
+	    \vspace{-3mm}
+	    \begin{itemize}
+		    \item (8) As a user I want to see what items the script found in a text file.
+		\end{itemize}
+	\section*{Sprint 3}
+	    \vspace{-3mm}
+	    \begin{itemize}
+		    \item (21) As a user I want the script to be able to purchase automatically. 
+		\end{itemize}	
+	\section*{Sprint 4}
+	    \vspace{-3mm}
+	    \begin{itemize}
+		    \item (21) As a user I want an interface to search for an item or an item type. 
+		\end{itemize}	
+	\section*{Product backlog}
+	    \vspace{-3mm}
+	    \begin{itemize}
+		    \item (3) As a user I want to be able to select the maximum/minimum price im willing to pay.
+		    \item (13) As a developer, I want to implement dependency injections and give the file daemon-like behavior
+		    \item (1) As a user, I want a well defined wiki to show me the prerequisites my machine needs in order to run this application
+		    \item (21) As a user I want to be confident that the items found are not aritfically discounted
+		\end{itemize}
+\end{document}
