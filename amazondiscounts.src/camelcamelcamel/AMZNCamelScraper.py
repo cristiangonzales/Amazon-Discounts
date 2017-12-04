@@ -31,8 +31,8 @@ class AMZNCamelScraper:
     def __init__(self):
 
         # Initialize the options for our Chrome Driver
-        # options = Options()
-        # options.add_argument('--proxy-server=' + self.select_proxy_server())
+        options = Options()
+        options.add_argument('--proxy-server=' + self.select_proxy_server())
 
         # See the user's system information, and choose the appropriate webdriver executable, accordingly
         if system() == "Darwin":
@@ -40,24 +40,24 @@ class AMZNCamelScraper:
             chrome_path = os.path.join(os.path.dirname(__file__), '../chromedriver/darwin/chromedriver')
             # Initialize our web driver
             self.browser = webdriver.Chrome(
-                executable_path=chrome_path
-                # chrome_options=options
+                executable_path=chrome_path,
+                chrome_options=options
             )
         elif system() == "Linux":
             # Configure the path
             chrome_path = os.path.join(os.path.dirname(__file__), '../chromedriver/linux/chromedriver')
             # Initialize our web driver
             self.browser = webdriver.Chrome(
-                executable_path=chrome_path
-                # chrome_options=options
+                executable_path=chrome_path,
+                chrome_options=options
             )
         elif system() == "Windows":
             # Configure the path
             chrome_path = os.path.join(os.path.dirname(__file__), '../chromedriver/windows/chromedriver.exe')
             # Initialize our web driver
             self.browser = webdriver.Chrome(
-                executable_path=chrome_path
-                # chrome_options=options
+                executable_path=chrome_path,
+                chrome_options=options
             )
         else:
             raise WebDriverException(
