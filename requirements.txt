@@ -1,0 +1,4 @@
+bs4>=0.0.1
+gevent>=1.2
+selenium>=3.6
+python-amazon-simple-product-api>=2.2
