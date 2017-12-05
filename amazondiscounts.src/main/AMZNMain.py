@@ -27,12 +27,14 @@ class AMZNMain:
     # Login information and opening statements
     def __init__(self):
         # Welcome the user
-        print("Welcome to the Amazon-Discounts Command Line Interface (v1.0)!\n"
+        print("**************************************************************"
+              + "Welcome to the Amazon-Discounts Command Line Interface (v1.0)!\n"
               + "Below are prompted instructions for your login information.\n"
               + "For the case that you might have made a mistake, please press\n"
               + "CTRL+C to start over. If anything breaks, please send a request\n"
               + "to: https://github.com/cristiangonzales/Amazon-Discounts/issues.\n"
-              + "Thank you!")
+              + "Thank you!"
+              + "**************************************************************")
 
         # Prompt for information to log into the account
         key = input("Please enter your AWS key here: ")
