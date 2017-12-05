@@ -27,7 +27,7 @@ class AMZNMain:
     # Login information and opening statements
     def __init__(self):
         # Welcome the user
-        print("**************************************************************\n"
+        print("\n\n**************************************************************\n"
               + "Welcome to the Amazon-Discounts Command Line Interface (v1.0)!\n"
               + "Below are prompted instructions for your login information.\n"
               + "For the case that you might have made a mistake, please press\n"
