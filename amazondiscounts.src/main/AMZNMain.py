@@ -27,14 +27,14 @@ class AMZNMain:
     # Login information and opening statements
     def __init__(self):
         # Welcome the user
-        print("**************************************************************"
+        print("**************************************************************\n"
               + "Welcome to the Amazon-Discounts Command Line Interface (v1.0)!\n"
               + "Below are prompted instructions for your login information.\n"
               + "For the case that you might have made a mistake, please press\n"
               + "CTRL+C to start over. If anything breaks, please send a request\n"
               + "to: https://github.com/cristiangonzales/Amazon-Discounts/issues.\n"
-              + "Thank you!"
-              + "**************************************************************")
+              + "Thank you!\n"
+              + "**************************************************************\n\n")
 
         # Prompt for information to log into the account
         key = input("Please enter your AWS key here: ")
@@ -52,8 +52,9 @@ class AMZNMain:
         self.cart = None
 
         # Ask for the discount rate, the output file, and the option
-        discount = int(input("Please enter the discount you would like to query for\n"
+        discount = int(input("\nPlease enter the discount you would like to query for\n"
                          + "(enter a whole number 1-99): "))
+        print("\n")
         # Check to see if it is actually an integer between 0-99
         if (not isinstance(discount, int)) or discount < 1 or discount > 99:
             raise Exception("Sorry, you did not enter a number between 1 and 99!")
