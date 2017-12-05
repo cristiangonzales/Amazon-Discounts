@@ -21,7 +21,7 @@ cd ..
 
 # Build and run our Docker container, giving it the same network attributes as our local machine
 docker build -t amazon-discounts .
-docker run --net=host amazon-discounts
+docker run --interactive --tty --net=host amazon-discounts
 
 # Stop and remove all containers once these processes are over
 docker kill $(docker ps -q)

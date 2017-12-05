@@ -8,11 +8,7 @@ import re
 import time
 import random
 
-import os
-from platform import system
 from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import WebDriverException
-
 from selenium import webdriver
 
 """
@@ -22,33 +18,17 @@ from selenium import webdriver
 class AMZNGoldboxFind:
 
     def __init__(self):
-        # See the user's system information, and choose the appropriate webdriver executable, accordingly
-        if system() == "Darwin":
-            # Configure the path
-            chrome_path = os.path.join(os.path.dirname(__file__), '../chromedriver/darwin/chromedriver')
-            # Initialize our web driver
-            self.browser = webdriver.Chrome(
-                executable_path=chrome_path
-            )
-        elif system() == "Linux":
-            # Configure the path
-            chrome_path = os.path.join(os.path.dirname(__file__), '../chromedriver/linux/chromedriver')
-            # Initialize our web driver
-            self.browser = webdriver.Chrome(
-                executable_path=chrome_path
-            )
-        elif system() == "Windows":
-            # Configure the path
-            chrome_path = os.path.join(os.path.dirname(__file__), '../chromedriver/windows/chromedriver.exe')
-            # Initialize our web driver
-            self.browser = webdriver.Chrome(
-                executable_path=chrome_path
-            )
-        else:
-            raise WebDriverException(
-                'Incompatible system requirements. Please see: https://github.com/cristiangonzales' +
-                '/Amazon-Discounts/wiki/Installation'
-            )
+        # Initialize the options for our Chrome Driver
+        options = Options()
+        options.add_argument('--headless')
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-gpu")
+
+        # Initalize our webdriver
+        self.browser = webdriver.Remote(
+            command_executor='http://127.0.0.1:4444/wd/hub',
+            desired_capabilities=options.to_capabilities()
+        )
 
     def tryNextPage(self, xPixels):
         xPixelTotal = xPixels
