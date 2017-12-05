@@ -8,4 +8,4 @@ pip3 install bs4 && pip3 install gevent && pip3 install selenium && pip3 install
 
 REM Go into the src folder and run the program
 CD ..\amazondiscounts.src\main
-python AMZNMain.py
+python3 AMZNMain.py
