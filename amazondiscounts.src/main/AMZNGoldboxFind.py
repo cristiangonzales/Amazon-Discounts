@@ -111,5 +111,5 @@ class AMZNGoldboxFind:
         newArray = []
         for i in range(len(listOfStr)):
             newArray.append(str(listOfStr[i]))
-            logging.debug("ASIN number: " + str(newArray[i]))
+            # logging.debug("ASIN number: " + str(newArray[i]))
         return newArray

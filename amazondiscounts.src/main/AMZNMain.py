@@ -27,12 +27,14 @@ class AMZNMain:
     # Login information and opening statements
     def __init__(self):
         # Welcome the user
-        print("Welcome to the Amazon-Discounts Command Line Interface (v1.0)!\n"
+        print("\n**************************************************************\n"
+              + "Welcome to the Amazon-Discounts Command Line Interface (v1.0)!\n"
               + "Below are prompted instructions for your login information.\n"
               + "For the case that you might have made a mistake, please press\n"
               + "CTRL+C to start over. If anything breaks, please send a request\n"
               + "to: https://github.com/cristiangonzales/Amazon-Discounts/issues.\n"
-              + "Thank you!")
+              + "Thank you!\n"
+              + "**************************************************************\n")
 
         # Prompt for information to log into the account
         key = input("Please enter your AWS key here: ")
@@ -50,12 +52,12 @@ class AMZNMain:
         self.cart = None
 
         # Ask for the discount rate, the output file, and the option
-        discount = int(input("Please enter the discount you would like to query for\n"
+        discount = int(input("\nPlease enter the discount you would like to query for\n"
                          + "(enter a whole number 1-99): "))
         # Check to see if it is actually an integer between 0-99
         if (not isinstance(discount, int)) or discount < 1 or discount > 99:
             raise Exception("Sorry, you did not enter a number between 1 and 99!")
-            sys.exit(1)
+
         # Prompt the user for an output text file to write to
         outputFile = open("../../amazon-discounts.log", 'w')
         # Optional argument as determined by the user
@@ -112,7 +114,7 @@ class AMZNMain:
                     self.cart_add(str(asin))
         # Once we are done, close the output file write and say goodbye.
         outputFile.close()
-        print("Thank you for using the Amazon-Discounts CLI! Exiting now...")
+        print("\nThank you for using the Amazon-Discounts CLI! Exiting now...\n")
 
     """
         Item search in the case that the user requests a query.
@@ -193,11 +195,16 @@ class AMZNMain:
 
 
 if __name__ == "__main__":
+
     # Setting root logging level to DEBUG
-    logging.getLogger().setLevel(logging.DEBUG)
+    # logging.getLogger().setLevel(logging.DEBUG)
+
+    # Multiple except blocks to see if the user does a keyboard interrupt, or if something breaks in the code.
     try:
-        mainThread = threading.Thread(target=AMZNMain)
-        mainThread.start()
+        AMZNMain()
+    except KeyboardInterrupt:
+        print("\nExiting the CLI now...\n")
+        sys.exit(1)
     except Exception as e:
         logging.error(str(e) +
                       "\nOops, sorry! Something seems to be broken." +
