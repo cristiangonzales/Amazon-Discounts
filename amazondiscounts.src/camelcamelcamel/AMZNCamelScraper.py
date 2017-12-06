@@ -27,7 +27,6 @@ from AMZNPriceHistory import AMZNPriceHistory
 class AMZNCamelScraper:
 
     def __init__(self):
-
         # Initialize the options for our Chrome Driver
         options = Options()
         options.add_argument('--proxy-server=' + self.select_proxy_server())
@@ -171,5 +170,5 @@ class AMZNCamelScraper:
         random_proxy = random.choice(
             open(path_to_proxylist).readlines()
         )
-        logging.info("Random proxy: " + random_proxy)
+        # logging.info("Random proxy: " + random_proxy)
         return random_proxy
