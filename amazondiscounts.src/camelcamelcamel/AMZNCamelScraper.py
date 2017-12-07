@@ -32,7 +32,10 @@ class AMZNCamelScraper:
 
         # Initialize the options for our Chrome Driver
         options = Options()
-        options.add_argument('--proxy-server=' + self.select_proxy_server())
+
+        # Set the proxy class variable
+        self.proxy = self.select_proxy_server()
+        options.add_argument('--proxy-server=' + self.proxy)
 
         # See the user's system information, and choose the appropriate webdriver executable, accordingly
         if system() == "Darwin":
@@ -105,6 +108,8 @@ class AMZNCamelScraper:
         try:
             # Declare new object instance
             obj = AMZNPriceHistory()
+            # Declare the proxy value for this object
+            obj.set_proxy(self.proxy)
             # Set the ASIN number for this object
             obj.set_ASIN(ASIN)
             # Create new soup instance with the source passed from the caller
