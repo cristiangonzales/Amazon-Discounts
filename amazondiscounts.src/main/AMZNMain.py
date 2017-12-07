@@ -99,10 +99,12 @@ class AMZNMain:
             currentPrice = titlePriceURLList[1]
             offerUrl = titlePriceURLList[2]
             # Interfacing with the CamelCamelCamel scraper, passing in the ASIN number and attempting to
-            # get the average price for that ASIN number. Should it be the case that the average price
+            # get the average, lowest, and highest price for that ASIN number. Should it be the case that the average price
             # is none, then we will check for it and see if it is accordingly.
             camelPriceHistory = AMZNCamelScraper().AccessASIN(asin)
             averagePrice = camelPriceHistory.get_average_price()
+            lowestPrice = camelPriceHistory.get_lowest_price()
+            highestPrice = camelPriceHistory.get_highest_price()
             # Conditional here to see if the average price is NoneType. If it is, it did not connect so we
             # should move onto the next ASIN (continue to the next iteration)
             if averagePrice is None:
@@ -111,9 +113,12 @@ class AMZNMain:
             # Now, we check the discount, sending the average price, the current price, and the user's discount
             if self.check_discount(discount, averagePrice, currentPrice):
                 outputFile.write("Title: " + title +
-                                "\nAmazon price: " + str(currentPrice) +
-                                "\nCamelCamelCamel average discount price: " + str(averagePrice) +
-                                "\nURL: " + offerUrl + "\n\n")
+                                 "\nAmazon price: " + str(currentPrice) +
+                                 "\nCamelCamelCamel average price: " + str(averagePrice) +
+                                 "\nCamelCamelCamel highest price: " + str(highestPrice) +
+                                 "\nCamelCamelCamel lowest price: " + str(lowestPrice) +
+                                 "\nPercentage off from average: " + str(percentageOff) +
+                                 "\nURL: " + offerUrl + "\n\n")
                 # Logic to add this item to our cart (if it is our first time adding to the cart, then create
                 # the cart item, and if it isn't the first time, then we simply add to the existiing cart
                 if cartCount == 0:
@@ -129,7 +134,9 @@ class AMZNMain:
         # Once we are done, close the output file write and say goodbye.
         outputFile.close()
         errorLog.close()
-        print("\nThank you for using the Amazon-Discounts CLI! Exiting now...\n")
+        print("\nThank you for using the Amazon-
+              
+              s CLI! Exiting now...\n")
 
     """
         Item search in the case that the user requests a query.
@@ -180,6 +187,14 @@ class AMZNMain:
     """
     def check_discount(self, discount, averagePrice, price):
         return (100 - (float(price) / float(averagePrice) * 100)) >= float(discount)
+              
+    """
+        calculate the percentage off the current Amazon price is from the average price.
+        :return int
+    """
+
+    def calculate_percentage_off(self, averagePrice, price):
+        return int(100 - (float(price) / float(averagePrice) * 100))
 
     """
         Once we do all the appropriate comparisons, we will create the cart and
