@@ -12,6 +12,7 @@ class AMZNPriceHistory:
 
     def __init__(self):
         self.ASIN = None
+        self.proxy = None
         self.current_price = None
         self.highest_price = None
         self.lowest_price = None
@@ -31,6 +32,20 @@ class AMZNPriceHistory:
     def get_ASIN(self):
         # logging.debug("ASIN number of this object: " + str(self.ASIN))
         return self.ASIN
+
+    """
+        Set the proxy value for this object
+        :param proxy: string value
+    """
+    def set_proxy(self, proxy):
+        self.proxy = proxy
+
+    """
+        Get the ASIN value for this object, as a string
+        :return proxy, as a string
+    """
+    def get_proxy(self):
+        return self.proxy
 
     """
         Set the current price from scraped data from our spider.

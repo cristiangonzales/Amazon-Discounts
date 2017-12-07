@@ -27,6 +27,7 @@ docker run --interactive --tty --net=host amazon-discounts
 echo Obtaining log file...
 id=$(docker ps -a | grep amazon-discounts | awk '{ print $1 }')
 docker cp $id:/usr/amazon-discounts.log .
+docker cp $id:/usr/failed-proxies.log .
 
 # Stop and remove all containers once these processes are over
 docker kill $(docker ps -q) > /dev/null 2>&1

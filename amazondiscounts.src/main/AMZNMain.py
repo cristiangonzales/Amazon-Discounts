@@ -14,7 +14,6 @@ import sys; sys.path.append(
     os.path.join(os.path.dirname(__file__), "../camelcamelcamel/")
 )
 
-import threading
 import gevent.monkey; gevent.monkey.patch_thread()
 
 from AMZNGoldboxFind import AMZNGoldboxFind
@@ -60,16 +59,25 @@ class AMZNMain:
 
         # Prompt the user for an output text file to write to
         outputFile = open("../../amazon-discounts.log", 'w')
+        errorLog = open("../../failed-proxies.log", 'w')
 
         # Optional argument as determined by the user
         optionArg = input("Please enter a type of item you wish to search for!\n"
                           + "If you do not have a particular type of item,\n"
                           + "then enter a number so that we can search Goldbox\n"
-                          + "for you and look for discounts there: ")
-        # See if the fourth argument is a requested number of pages or a keyword. If it is a keyword,
-        # scrape Amazon's Goldbox page, and if not, then search for that item through the API
+                          + "for you and look for discounts there. Also, if you\n"
+                          + "wish to search for a single item, you may enter the\n"
+                          + "keywords 'item lookup': ")
+        # For this option argument, if it is not a keyword, then scrape Amazon's Goldbox page,
+        # and if not, then search for that item through the API. Though, if a user inputs "item
+        # lookup", then simply make a single list with that ASIN number appended.
         if optionArg.isdigit():
             asinList = AMZNGoldboxFind().scrape_goldbox(int(optionArg))
+        elif optionArg.replace(" ", "").upper() == "ITEMLOOKUP":
+            singleItem = str(input("\nPlease enter in the ASIN number of the item you\n"
+                                   + "wish to look for here: "))
+            asinList = []
+            asinList.append(singleItem)
         else:
             asinList = self.item_search(optionArg, discount)
 
@@ -98,6 +106,7 @@ class AMZNMain:
             # Conditional here to see if the average price is NoneType. If it is, it did not connect so we
             # should move onto the next ASIN (continue to the next iteration)
             if averagePrice is None:
+                errorLog.write("Proxy tunneling failed at " + str(camelPriceHistory.get_proxy()))
                 continue
             # Now, we check the discount, sending the average price, the current price, and the user's discount
             if self.check_discount(discount, averagePrice, currentPrice):
@@ -112,8 +121,14 @@ class AMZNMain:
                     cartCount = cartCount + 1
                 else:
                     self.cart_add(str(asin))
+        # Write the purchase URL to the logging file
+        if cartCount != 0:
+            outputFile.write("Click here to add all items to your cart: " + str(self.cart.purchase_url))
+        else:
+            outputFile.write("Sorry, we did not find any items to add to your cart!")
         # Once we are done, close the output file write and say goodbye.
         outputFile.close()
+        errorLog.close()
         print("\nThank you for using the Amazon-Discounts CLI! Exiting now...\n")
 
     """

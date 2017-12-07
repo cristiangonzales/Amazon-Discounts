@@ -27,9 +27,13 @@ from AMZNPriceHistory import AMZNPriceHistory
 class AMZNCamelScraper:
 
     def __init__(self):
+
+        # Initialize class variable for proxy
+        self.proxy = self.select_proxy_server()
+
         # Initialize the options for our Chrome Driver
         options = Options()
-        options.add_argument('--proxy-server=' + self.select_proxy_server())
+        options.add_argument('--proxy-server=' + self.proxy)
         options.add_argument('--headless')
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-gpu")
@@ -80,6 +84,8 @@ class AMZNCamelScraper:
         try:
             # Declare new object instance
             obj = AMZNPriceHistory()
+            # Declare the proxy value for this object
+            obj.set_proxy(self.proxy)
             # Set the ASIN number for this object
             obj.set_ASIN(ASIN)
             # Create new soup instance with the source passed from the caller
