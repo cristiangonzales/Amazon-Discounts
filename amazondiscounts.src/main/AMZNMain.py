@@ -10,11 +10,13 @@ from amazon.api import AmazonAPI
 from amazon.api import AmazonException
 
 import os
-import sys; sys.path.append(
+import sys
+sys.path.append(
     os.path.join(os.path.dirname(__file__), "../camelcamelcamel/")
 )
 
-import gevent.monkey; gevent.monkey.patch_thread()
+import gevent.monkey
+gevent.monkey.patch_thread()
 
 from AMZNGoldboxFind import AMZNGoldboxFind
 from AMZNCamelScraper import AMZNCamelScraper
@@ -22,6 +24,8 @@ from AMZNCamelScraper import AMZNCamelScraper
 """
     This is the root class.
 """
+
+
 class AMZNMain:
     # Login information and opening statements
     def __init__(self):
@@ -39,7 +43,7 @@ class AMZNMain:
         key = input("Please enter your AWS key here: ")
         secret_key = input("Please enter your AWS secret key here: ")
         asso_tag = input("Please enter your AWS associate tag here: ")
-        region = input("Please enter your region here (i.e. US, FR, CN, UK,"+
+        region = input("Please enter your region here (i.e. US, FR, CN, UK," +
                        "IN, CA, DE, JP, IT): ")
         self.amazon = AmazonAPI(
             aws_key=str(key),
@@ -52,7 +56,7 @@ class AMZNMain:
 
         # Ask for the discount rate, the output file, and the option
         discount = int(input("\nPlease enter the discount you would like to query for\n"
-                         + "(enter a whole number 1-99): "))
+                             + "(enter a whole number 1-99): "))
         # Check to see if it is actually an integer between 0-99
         if (not isinstance(discount, int)) or discount < 1 or discount > 99:
             raise Exception("Sorry, you did not enter a number between 1 and 99!")
@@ -75,7 +79,7 @@ class AMZNMain:
             asinList = AMZNGoldboxFind().scrape_goldbox(int(optionArg))
         elif optionArg.replace(" ", "").upper() == "ITEMLOOKUP":
             singleItem = str(input("\nPlease enter in the ASIN number of the item you\n"
-                                 + "wish to look for here: "))
+                                   + "wish to look for here: "))
             asinList = []
             asinList.append(singleItem)
         else:
@@ -99,10 +103,12 @@ class AMZNMain:
             currentPrice = titlePriceURLList[1]
             offerUrl = titlePriceURLList[2]
             # Interfacing with the CamelCamelCamel scraper, passing in the ASIN number and attempting to
-            # get the average price for that ASIN number. Should it be the case that the average price
-            # is none, then we will check for it and see if it is accordingly.
+            # get the average, lowest, and highest price for that ASIN number. Should it be the case that
+            # the average price is none, then we will check for it and see if it is accordingly.
             camelPriceHistory = AMZNCamelScraper().AccessASIN(asin)
             averagePrice = camelPriceHistory.get_average_price()
+            lowestPrice = camelPriceHistory.get_lowest_price()
+            highestPrice = camelPriceHistory.get_highest_price()
             # Conditional here to see if the average price is NoneType. If it is, it did not connect so we
             # should move onto the next ASIN (continue to the next iteration)
             if averagePrice is None:
@@ -110,10 +116,14 @@ class AMZNMain:
                 continue
             # Now, we check the discount, sending the average price, the current price, and the user's discount
             if self.check_discount(discount, averagePrice, currentPrice):
+                percentageOff = self.calculate_percentage_off(averagePrice, currentPrice)
                 outputFile.write("Title: " + title +
-                                "\nAmazon price: " + str(currentPrice) +
-                                "\nCamelCamelCamel average discount price: " + str(averagePrice) +
-                                "\nURL: " + offerUrl + "\n\n")
+                                 "\nAmazon price: " + str(currentPrice) +
+                                 "\nCamelCamelCamel average price: " + str(averagePrice) +
+                                 "\nCamelCamelCamel highest price: " + str(highestPrice) +
+                                 "\nCamelCamelCamel lowest price: " + str(lowestPrice) +
+                                 "\nPercentage off from average: " + str(percentageOff) +
+                                 "\nURL: " + offerUrl + "\n\n")
                 # Logic to add this item to our cart (if it is our first time adding to the cart, then create
                 # the cart item, and if it isn't the first time, then we simply add to the existiing cart
                 if cartCount == 0:
@@ -137,6 +147,7 @@ class AMZNMain:
         :param pctoff: The percent off that the user requests, as an integer.
         :return: A list of ASIN values, as strings
     """
+
     def item_search(self, keywords, pctoff):
         try:
             result = self.amazon.search(
@@ -154,6 +165,7 @@ class AMZNMain:
         :param ASIN: The ASIN number, as a string.
         :return amznList [title, price, URL] as an array. Title is a string, price as a float, and URL as a string
     """
+
     def item_lookup(self, ASIN):
         try:
             # Initialize the Amazon list
@@ -178,8 +190,17 @@ class AMZNMain:
         Check to see if this is a discount, as wanted by the user.
         :return bool (dependent on if this is a discount that we want or not).
     """
+
     def check_discount(self, discount, averagePrice, price):
         return (100 - (float(price) / float(averagePrice) * 100)) >= float(discount)
+
+    """
+        calculate the percentage off the current Amazon price is from the average price.
+        :return int
+    """
+
+    def calculate_percentage_off(self, averagePrice, price):
+        return int(100 - (float(price) / float(averagePrice) * 100))
 
     """
         Once we do all the appropriate comparisons, we will create the cart and
@@ -187,6 +208,7 @@ class AMZNMain:
         :param ASIN: The ASIN number of the discounted item
         :return void
     """
+
     def cart_create(self, ASIN):
         try:
             product = self.amazon.lookup(ItemId=ASIN)
@@ -200,6 +222,7 @@ class AMZNMain:
         :param ASIN: The ASIN number of the discounted item
         :return void
     """
+
     def cart_add(self, ASIN):
         try:
             product = self.amazon.lookup(ItemId=ASIN)
